@@ -1,0 +1,20 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<!-- xmlns:th will define the namespace for Thymeleaf-->
+<head>
+    <title>All flights</title>
+</head>
+<body>
+<p>All Flights:</p>
+
+<!--    For loop to get each flight-->
+<!--    "allFlights" is the identifier that added to model in our controller-->
+<!--    "flight" is just a variable use to assign each flight into that, we can use any name for that-->
+<!--    th:text uses to put the data into text within the element-->
+<!--    Use ${} to put expressions inside-->
+<ul th:each="flight : ${allFlights}">
+    <span>Flight:</span>
+    <li th:text="${flight.departure_Airport}"></li>
+    <li th:text="${flight.arrival_Airport}"></li>
+</ul>
+</body>
+</html>
